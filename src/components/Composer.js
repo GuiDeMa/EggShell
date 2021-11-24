@@ -76,20 +76,21 @@ export default function Composer(props) {
     if (branchTx) {
       FetchPostDetail(branchTx).then((res) => {
         setQuote(res.allPosts.edges[0]);
+        setEstimate(estimate + 0.01);
       });
     }
-  });
+  }, [replyTx, branchTx]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (content.length > 0) {
         if (branchTx) {
-          setEstimate(estimate + 0.01);
+          do something
         }
       }
     }, 1000);
     return () => clearTimeout(timeoutId);
-  }, [content]);
+  }, [content]); */
 
   const handleChangeContent = (e) => {
     setContent(e.target.value);
