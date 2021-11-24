@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, OutlinedInput, Typography, useTheme } from "@mui/material";
-import Mask from "../resources/Mask";
+import Logo from "../resources/Logo.png";
 import { userData } from "../api/TwetchGraph";
 import auth from "../utils/auth";
 import config from "../config.json";
@@ -82,8 +82,17 @@ export default function TwetchCallback(props) {
           }}
         >
           <div style={{ margin: "0 auto", maxWidth: "100%" }}>
-            <div style={{ position: "relative", marginBottom: "36px" }}>
-              <Mask style={{ color: "#000000" }} />
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <div style={{ flexGrow: 1 }} />
+              <img
+                src={Logo}
+                style={{
+                  width: "69px",
+                  height: "69px",
+                  justifyContent: "center"
+                }}
+              />
+              <div style={{ flexGrow: 1 }} />
             </div>
             <Typography
               variant="body1"
@@ -169,7 +178,7 @@ export default function TwetchCallback(props) {
                   onClick={handleSubmit}
                 >
                   <Typography variant="body1">
-                    Link Twetch Wallet and start {config.appIdentity.mask}
+                    Link Twetch Wallet and go
                   </Typography>
                 </Button>
               </form>

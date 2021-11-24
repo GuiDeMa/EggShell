@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 import { Fab } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
-
+import Logo from "../resources/Logo.png";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -33,7 +33,7 @@ export default function StickyButton(props) {
         component={Link}
         to={`/compose`}
       >
-        <AddIcon />
+        <img src={Logo} style={{ height: "69px" }} />
       </Fab>
     </div>
   );

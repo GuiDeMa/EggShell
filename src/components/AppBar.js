@@ -19,10 +19,11 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import EmojiObjectsOutlinedIcon from "@mui/icons-material/EmojiObjectsOutlined";
 import StarsOutlinedIcon from "@mui/icons-material/StarsOutlined";
+import PhotoCameraOutlinedIcon from "@mui/icons-material/PhotoCameraOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import SettingsIcon from "@mui/icons-material/Settings";
-import Mask from "../resources/Mask";
+import Logo from "../resources/Logo.png";
 
 import Messages from "./Messages";
 import Notifications from "./Notifications";
@@ -184,6 +185,16 @@ export default function AppBar(props) {
                     </Typography>
                   </ListItemText>
                 </ListItem>
+                <ListItem button component={Link} to="/gallery">
+                  <ListItemIcon>
+                    <PhotoCameraOutlinedIcon color={isSelected("Gallery")} />
+                  </ListItemIcon>
+                  <ListItemText>
+                    <Typography variant="body1" color={isSelected("Gallery")}>
+                      Gallery
+                    </Typography>
+                  </ListItemText>
+                </ListItem>
                 <ListItem button component={Link} to="/settings">
                   <ListItemIcon>
                     <SettingsIcon color={isSelected("Settings")} />
@@ -210,7 +221,10 @@ export default function AppBar(props) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "22px",
+          paddingLeft: "22px",
+          paddingTop: "3px",
+          paddingBottom: "3px",
+          paddingRight: "22px",
           borderBottom: `1px solid ${theme.palette.divider}`
         }}
       >
@@ -236,19 +250,19 @@ export default function AppBar(props) {
             <SearchIcon color="primary" />
           </IconButton>
         </div>
-        <div style={{ alignContent: "center" }}>
-          <Link
-            style={{
-              color: "#2F2F2F",
-              margin: 0,
-              fontSize: "22px",
-              fontWeight: "bold",
-              textDecoration: "none"
-            }}
-            to="/"
-          >
-            <Mask small />
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <div style={{ flexGrow: 1 }} />
+          <Link to="/">
+            <img
+              src={Logo}
+              style={{
+                width: "69px",
+                height: "69px",
+                justifyContent: "center"
+              }}
+            />
           </Link>
+          <div style={{ flexGrow: 1 }} />
         </div>
         <div style={{ float: "right" }}>
           {localStorage.tokenTwetchAuth === "anon" ? (

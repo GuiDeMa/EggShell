@@ -35,20 +35,7 @@ export default function Welcome() {
               height: "100%"
             }}
           >
-            <div style={{ padding: "24px" }}>
-              <div
-                style={{ fontWeight: 669, fontSize: "24px", cursor: "pointer" }}
-              >
-                <span role="img" aria-label="the egg way">
-                  {config.appIdentity.mask}
-                </span>
-                {smDown ? null : (
-                  <span style={{ fontSize: "18px", marginLeft: "3px" }}>
-                    {config.appIdentity.title}
-                  </span>
-                )}
-              </div>
-            </div>
+            <div style={{ padding: "24px" }}></div>
             <div style={{ display: "flex", height: "100%" }}>
               <div style={{ flexGrow: 1 }} />
               <div

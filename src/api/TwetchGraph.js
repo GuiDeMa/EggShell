@@ -169,6 +169,24 @@ export function FetchPosts(filter, order, offset) {
     }
   }`);
 }
+
+export function FetchPXL(filters, order, offset) {
+  let arr = filters.map((f) => {
+    return `{bContent:{includesInsensitive:"${f}"}}`;
+  });
+  arr = arr.toString();
+  return twquery(`{
+    allPosts(orderBy: ${order} first: 30 offset: ${offset} filter: {and: {or:[${arr}]}, userId: {equalTo: "16322"}}) {
+      totalCount
+      edges {
+        node {
+          ...${PostFields}
+        }
+      }
+    }
+  }`);
+}
+
 export function FetchHome(ticker, order, offset) {
   //console.log(filter);
   return twquery(`{

@@ -5,6 +5,7 @@ import Mask from "../resources/Mask";
 import auth from "../utils/auth";
 import config from "../config.json";
 import { TwetchLogin } from "../wallets/twetch";
+import Logo from "../resources/Logo.png";
 
 export default function Auth() {
   const history = useHistory();
@@ -34,7 +35,14 @@ export default function Auth() {
           borderRadius: "6px"
         }}
       >
-        <Mask style={{ alignContent: "center" }} />
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <div style={{ flexGrow: 1 }} />
+          <img
+            src={Logo}
+            style={{ width: "69px", height: "69px", justifyContent: "center" }}
+          />
+          <div style={{ flexGrow: 1 }} />
+        </div>
         <Typography
           variant="body1"
           style={{
